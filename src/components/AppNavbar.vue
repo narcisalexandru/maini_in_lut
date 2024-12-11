@@ -9,7 +9,7 @@
       </router-link>
     </template>
     <template #end>
-      <div class="flex align-center justify-center gap-3">
+      <div class="flex align-center justify-center gap-4">
         <router-link to="/favorite">
           <span class="pi pi-heart text-xl"></span>
         </router-link>
