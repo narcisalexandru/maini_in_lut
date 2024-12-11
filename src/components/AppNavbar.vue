@@ -1,7 +1,24 @@
 <template>
-  <div>
-    <Menubar class="flex rounded-none lg:justify-center bg-custom-green" :model="items" />
-  </div>
+  <Menubar class="py-0 px-32 w-full flex align-center justify-center" :model="items">
+    <template #start>
+      <router-link to="/">
+        <img src="\src\assets\images\logo scris doara.svg" alt="Icon" class="h-12" />
+      </router-link>
+    </template>
+    <template #end>
+      <div class="flex align-center justify-center gap-3">
+        <router-link to="/favorite">
+          <span class="pi pi-heart text-xl"></span>
+        </router-link>
+        <router-link to="/cos">
+          <span class="pi pi-shopping-bag text-xl"></span>
+        </router-link>
+        <router-link to="/login">
+          <span class="pi pi-user"></span>
+        </router-link>
+      </div>
+    </template>
+  </Menubar>
 </template>
 
 <script setup lang="ts">
@@ -13,7 +30,7 @@ const items = ref(createNavbarItems())
 
 <style>
 :root {
-  --p-menubar-color: #546a50;
+  --p-menubar-color: #ece4d4;
   --p-menubar-gap: 1.5rem;
   --p-menubar-item-focus-background: #ece4d4;
   --p-menubar-item-active-background: #546a50;
@@ -25,7 +42,7 @@ const items = ref(createNavbarItems())
   --p-menubar-mobile-button-focus-ring-color: #ece4d4;
   --p-menubar-item-active-color: #546a50;
   --p-menubar-item-focus-color: #546a50;
-  --p-menubar-item-icon-active-color: #546a50;
+  --p-menubar-item-icon-active-color: #ece4d4;
   --p-menubar-submenu-background: #546a50;
   --p-menubar-background: #546a50;
 }

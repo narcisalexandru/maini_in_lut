@@ -15,6 +15,7 @@
   /* font-weight: 100-900 ; */
   font-style: normal;
   font-variation-settings: 'wdth' 100;
+  box-sizing: border-box;
 }
 body {
   background-color: #ece4d4;
