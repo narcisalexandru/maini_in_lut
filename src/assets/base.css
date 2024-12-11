@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap');
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+* {
+  font-family: 'Noto Serif Display', serif;
+  font-optical-sizing: auto;
+  /* font-weight: 100-900 ; */
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+body {
+  background-color: #ece4d4;
+}
