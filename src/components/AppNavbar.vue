@@ -1,5 +1,8 @@
 <template>
-  <Menubar class="py-0 px-32 w-full flex align-center rounded-none justify-center" :model="items">
+  <Menubar
+    class="py-0 lg:px-32 w-full flex align-center rounded-none justify-center"
+    :model="items"
+  >
     <template #start>
       <router-link to="/">
         <img src="\src\assets\images\logo scris doara.svg" alt="Icon" class="h-12" />
