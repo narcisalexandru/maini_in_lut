@@ -9,17 +9,10 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppNavbar: typeof import('./src/components/AppNavbar.vue')['default']
     Avatar: typeof import('primevue/avatar')['default']
-    Badge: typeof import('primevue/badge')['default']
-    Button: typeof import('primevue/button')['default']
-    Divider: typeof import('primevue/divider')['default']
-    InputText: typeof import('primevue/inputtext')['default']
+    GoogleAuthButton: typeof import('./src/components/GoogleAuthButton.vue')['default']
     Menubar: typeof import('primevue/menubar')['default']
-    NavbarItems: typeof import('./src/components/NavbarItems.vue')['default']
-    Password: typeof import('primevue/password')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-  }
-  export interface ComponentCustomProperties {
-    Ripple: typeof import('primevue/ripple')['default']
+    UserInfo: typeof import('./src/components/UserInfo.vue')['default']
   }
 }

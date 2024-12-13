@@ -5,7 +5,7 @@
   >
     <template #start>
       <router-link to="/">
-        <img src="\src\assets\images\logo scris doara.svg" alt="Icon" class="h-12" />
+        <img src="\src\assets\images\logo scris doar.svg" alt="Icon" class="h-12" />
       </router-link>
     </template>
     <template #end>
@@ -16,7 +16,7 @@
         <router-link to="/cos">
           <span class="pi pi-shopping-bag text-xl"></span>
         </router-link>
-        <router-link to="/login">
+        <router-link to="/auth">
           <span class="pi pi-user"></span>
         </router-link>
       </div>
