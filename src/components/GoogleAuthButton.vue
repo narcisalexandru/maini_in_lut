@@ -18,8 +18,10 @@
 <script setup lang="ts">
 import { GoogleSignInButton, type CredentialResponse } from 'vue3-google-signin'
 import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/authStore'
 
 const router = useRouter()
+const authStore = useAuthStore()
 
 const handleLoginSuccess = async (response: CredentialResponse) => {
   const { credential } = response
@@ -27,9 +29,7 @@ const handleLoginSuccess = async (response: CredentialResponse) => {
   try {
     const res = await fetch('http://localhost:5000/api/auth/google', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ idToken: credential }),
     })
 
@@ -38,8 +38,10 @@ const handleLoginSuccess = async (response: CredentialResponse) => {
     }
 
     const data = await res.json()
-    router.push('/')
-    console.log('User info:', data)
+
+    authStore.login(data.token)
+
+    router.push(`/profile/${data.name}`)
   } catch (error) {
     console.error('Login error:', error)
   }

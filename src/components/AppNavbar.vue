@@ -16,19 +16,31 @@
         <router-link to="/cos">
           <span class="pi pi-shopping-bag text-xl"></span>
         </router-link>
-        <router-link to="/auth">
-          <span class="pi pi-user"></span>
-        </router-link>
+        <div v-if="user" class="flex items-center gap-2">
+          <router-link :to="`/profile/${user.name}`">
+            <Avatar v-if="user.picture" :image="user.picture" shape="circle" />
+          </router-link>
+          <span>{{ user.name }}</span>
+        </div>
+        <div v-else>
+          <router-link to="/auth">
+            <span class="pi pi-user"></span>
+          </router-link>
+        </div>
       </div>
     </template>
   </Menubar>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { createNavbarItems } from '@/data/NavbarItems'
+import { useAuthStore } from '@/stores/authStore'
 
 const items = ref(createNavbarItems())
+
+const authStore = useAuthStore()
+const user = computed(() => authStore.user)
 </script>
 
 <style>

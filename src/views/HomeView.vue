@@ -5,6 +5,4 @@
   </main>
 </template>
 
-<script setup lang="ts">
-import UserInfo from '@/components/UserInfo.vue'
-</script>
+<script setup lang="ts"></script>
